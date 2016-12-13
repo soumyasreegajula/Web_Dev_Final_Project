@@ -1,0 +1,68 @@
+
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header align">
+                    <a class="navbar-brand inherit">Profile</a>
+                    <p class="navbar-text pull-right" style="margin-right: 10px">
+                        <a ng-click="model.updateUser(model.user)"  class="glyphicon glyphicon-ok tick inherit" style="text-decoration: none;"></a>
+
+                    </p>
+
+                </div>
+            </div>
+
+
+        </nav>
+        <div class="container">
+
+
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input ng-model="model.user.username" class="form-control" type="text"  id="username" placeholder="Soumya Sree">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+
+                    <input ng-model="model.user.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Soumya@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">FirstName</label>
+                    <input ng-model="model.user.firstName" type="text" class="form-control" id="firstName" placeholder="Soumya Sree">
+                </div>
+
+                <div class="form-group">
+
+                    <label for="lastname">LastName</label>
+                    <input ng-model="model.user.lastName" type="text" class="form-control" id="lastName" placeholder="Gajula">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input ng-model="model.user.phone"
+                           type="text"
+                           class="form-control"
+                           id="phone"
+                           placeholder="XXX-XXX-XXXX">
+                </div>
+
+                <a href="#/user/{{model.user._id}}/website" class="btn btn-primary btn-block">Websites</a>
+                <a ng-click="model.deleteUser()" href="#/login" class="btn btn-danger btn-block">Delete</a>
+                <a class="btn btn-block btn-danger"
+                   ng-click="model.logout()">Logout</a>
+
+            </form>
+        </div>
+
+
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <p class="navbar-text pull-right" style="margin-right: 10px">
+                <a href="#/user/{{model.user._id}}" class="glyphicon glyphicon-user inherit" style="text-decoration: none;"></a>
+            </p>
+        </nav>
+
+
+
+
+

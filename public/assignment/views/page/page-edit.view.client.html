@@ -1,0 +1,80 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-pages">
+    <div class="container-fluid row">
+        <div class="col-xs-4 hidden-xs">
+            <div class="navbar-header align">
+                <p class="navbar-text pull-left" style="margin-left: 5px">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="glyphicon glyphicon-chevron-left  inherit" style="text-decoration: none;"></a>
+                </p>
+                <a class="navbar-brand inherit">
+                    Pages
+                </a>
+
+                <p class="navbar-text pull-right" style="margin-right: 10px">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="glyphicon glyphicon-plus inherit" style="text-decoration: none;"></a>
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <div class="navbar-header align">
+                <p class="navbar-text pull-left hidden-sm hidden-lg" style="margin-left: 5px">
+                    <a href="#/user/{{model.userId}}/website" class="glyphicon glyphicon-chevron-left  inherit" style="text-decoration: none;"></a>
+                </p>
+                <a class="navbar-brand inherit">Edit Page</a>
+                <p class="navbar-text pull-right" style="margin-right: 10px">
+                    <a  ng-click="model.updatePage(model.pageId,model.page)" class="glyphicon glyphicon-ok inherit" style="text-decoration: none;"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="row container-fluid">
+        <div class="col-xs-4 hidden-xs">
+            <form>
+                <ul class="list-group">
+                    <div ng-repeat="page in model.pages" class="form-group">
+                        <a  href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget" class="page-list_label_style">{{page.name}}</a>
+                        <p class="pull-right">
+                            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}" class="glyphicon glyphicon-cog " style="text-decoration: none;"></a>
+                        </p>
+
+                    </div>
+
+                </ul>
+            </form>
+        </div>
+
+
+
+
+
+        <form>
+              <div class="v-divider hidden-sm hidden-xs"></div>
+                <div class=" col-xs-10 col-sm-8 ">
+                    <div ng-if="model.error" class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Error!</strong> {{model.error}}
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input ng-model="model.page.name" type="text" class="form-control" id="name" >
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input ng-model="model.page.title" type="text" class="form-control" id="title" >
+                    </div>
+
+                        <a ng-click="model.deletePage()" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="btn btn-danger btn-block">Delete</a>
+
+                </div>
+             
+        </form>
+    </div>
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom navbar-pages">
+        <p class="navbar-text pull-right" style="margin-right: 15px">
+            <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-user page-list_label_style   glyphicon-pages-user" style="text-decoration: none;"></a>
+        </p>
+    </nav>

@@ -1,0 +1,43 @@
+<div class="container">
+
+
+
+
+
+    <div ng-show= "model.error"
+         class="errorAlert alert alert-danger"
+         role="alert">{{model.error}}</div>
+
+    <form name="loginForm" novalidate>
+        <input ng-model="username"
+               required
+               name="username"
+               class = "form-control"
+               type = "text"
+               autocomplete="off"
+               autocapitalize="off"
+               placeholder = "username" />
+        <p ng-show="loginForm.username.$invalid && loginForm.$submitted">
+            Username is Required
+        </p>
+        <input ng-model="password"
+               name="password"
+               class="form-control"
+               required
+               type = "password"
+               placeholder = "password" />
+        <p ng-show="loginForm.password.$invalid && loginForm.$submitted">
+            Password is Required
+        </p>
+
+        <button type="submit"
+                ng-click="model.login(username,password)"
+                class="btn btn-block btn-primary">Login</button>
+    </form>
+    <a ng-click="model.register()"
+       class="btn btn-block btn-success">Register</a>
+    <a href= "/auth/facebook" class="btn btn-primary btn-block">
+        <span class="fa fa-facebook-official"></span>
+        Login with Facebook
+    </a>
+</div>

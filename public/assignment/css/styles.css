@@ -1,0 +1,164 @@
+
+body{
+    padding-top: 65px
+}
+
+.container{
+    margin-bottom: -30px;
+}
+
+.navbar-default
+{
+    background-color: royalblue;
+}
+
+.navbar-pages{
+    background-color: gainsboro;
+}
+
+.glyphicon-pages-user{
+    color:royalblue !important;
+}
+
+.glyphicon-pages{
+    color:black !important;
+}
+
+.page-navbar-default{
+    background-color:gainsboro;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+    float: left;
+}
+
+element.style {
+    margin-right: 15px;
+}
+
+.page-list_label_style {
+
+    color: dodgerblue;
+}
+
+.left{
+    margin-left:10px;
+}
+
+.glyphicon-ok{
+
+    color:white;
+
+
+}
+
+.glyphicon-plus{
+    color:white;
+
+
+}
+
+.glyphicon-user{
+
+    color:white;
+
+}
+.glyphicon{
+    text-decoration: none;
+    text-underline: none;
+
+
+}
+
+.glyphicon-chevron-left{
+    color:white;
+
+}
+
+.align{
+    float:none;
+}
+
+.pull-left{
+    float:none;
+}
+
+
+.pull-right{
+    float:none;
+}
+
+.inherit {
+    color: white !important;
+    text-decoration:none;!important;
+    text-underline-mode: false !important;
+}
+
+.v-divider{
+
+    width:1px;
+    background-color: black;
+    left: 33%;
+    position: absolute;
+    z-index: 5;
+    top:0;
+    bottom: 0;
+}
+
+
+
+.relative-position {
+    position: relative;
+}
+.absolute-position {
+    position: absolute;
+}
+.list-element-menu {
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    background-color: white;
+}
+.zero-right-padding {
+    padding-right: 0px;
+}
+
+.hidden-phone {
+    display: block;
+}
+
+.glyphicon-play-widget{
+    color: dimgray;
+}
+
+.a{
+    text-decoration: none;!important;
+}
+.list-group{
+
+    margin-bottom: 60px;
+
+}
+
+.form-group{
+    margin-left: 10px;
+}
+.iframe{
+    margin-bottom: 60px;
+}
+
+
+
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

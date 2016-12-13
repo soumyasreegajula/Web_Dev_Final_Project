@@ -1,0 +1,131 @@
+<head>
+    <style>
+        .imgSize {
+            max-width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">B2B-Ecommerce</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/home">About</a>
+                </li>
+
+
+                <li>
+                    <a href="#/loginBuyer">Login</a>
+                </li>
+                <li>
+
+                    <a class="active pull-right"
+                       ng-href="#/loginBuyer" float="right">Logout</a>
+
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<div class="container">
+
+    <div ng-init="model.init()" />
+
+
+   <!-- <input type="text"
+           ng-model="searchinput"
+           class="form-control"
+           placeholder="search for commodity"/>
+    <a ng-click="model.useApi(searchinput)"
+       class="btn btn-primary btn-block">Search</a>
+-->
+
+
+
+    <br>
+
+
+
+
+    <div class="container">
+
+
+        <div ng-repeat="variety in allVarieties track by $index" class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <span>
+                    <a  class="thumbnail">
+                        <img id="imagessize" src="{{variety.varietypicture}}" />
+                        <a class="btn btn-primary btn-block" id="commodities" ng-href="#/variety/{{variety.varietyname}}">
+                            {{variety.varietyname}}
+                        </a>
+
+                    </a>
+                </span>
+        </div>
+
+
+    </div>
+
+
+    <!--<div class="container">
+
+        <div class="row">
+
+
+
+            <div ng-repeat="detail in details.records track by $index" class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img src="https://www.revealnews.org/wp-content/uploads/2015/03/shutterstock_102426532-web-1031x675.jpg"> {{detail.variety}}
+                    </img>
+                    {{detail.modal_price}}
+                </a>
+
+            </div>
+
+        </div>
+    </div>-->
+
+    <nav class="navbar  navbar-fixed-bottom navbar-pages-project">
+        <p class="navbar-text pull-right" style="margin-right: 15px">
+            Copyrights@2016
+        </p>
+    </nav>
+
+</div>
+</div>
+
+<script src="js/jquery.js"></script>
+
+
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

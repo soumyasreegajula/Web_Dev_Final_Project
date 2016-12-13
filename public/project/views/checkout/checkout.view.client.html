@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/custom.css"/>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">B2B-Ecommerce</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/home">About</a>
+                </li>
+
+                <li>
+                    <a href="#/loginBuyer">Login</a>
+                </li>
+                <li>
+
+                    <a class="active pull-right"
+                       ng-href="#/loginBuyer" float="right">Logout</a>
+
+
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+
+<br>
+<div class="container-fluid breadcrumbBox text-center">
+
+    <button type="button" class="btn btn-large btn-success" ng-click="model.addtobought()"><span ></span> Place Order</button>
+
+</div>
+
+<div class="container text-center">
+
+    <div ng-init="model.init()" />
+
+
+    <div class="creatediv1 marginTop30">
+
+        <div class="row margin-top-50">
+            <div class="col-md-12">
+                <div class="panel panel-primary filterable">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">List of items in cart<span style="color: white; font-weight: bold;"> </span></h3>
+
+                    </div>
+
+
+
+
+                        <div ng-repeat="item in cartDetails track by $index">
+                            <table class="table  table-striped table-bordered table-hover table-responsive">
+
+                                <tbody>
+
+                                    <td>
+                                        <input
+
+                                                ng-model="newObject[$index]"
+                                                type="checkbox"
+                                                ng-disabled="disable[$index]">
+                                    </td>
+
+                                    <td>Seller: {{item['sellername']}}</td>
+                                    <td>Variety: {{item['varietyname']}}</td>
+                                    <td>Quantity: {{item['quantity']}}</td>
+
+                                </tbody>
+
+
+
+
+</table>
+                        </div>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- The popover content -->
+
+<div id="popover" style="display: none">
+    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+</div>
+
+<!-- JavaScript includes -->
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/customjs.js"></script>
+
+</body>
+</html>
