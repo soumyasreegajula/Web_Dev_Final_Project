@@ -43,6 +43,7 @@ body{
 .navbar-default .navbar-brand {
     color: white;
     float: left;
+    margin-down: 15px;
 }
 
 element.style {
