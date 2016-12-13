@@ -4,13 +4,7 @@ body{
 }
 
 .container{
-    margin-bottom: 50px;
-
-}
-
-.logincontainer{
     margin-bottom: 10px;
-
 }
 
 .sellercontainer{
@@ -18,7 +12,7 @@ body{
 }
 
 .commoditiescontainer{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .navbar-default
