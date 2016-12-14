@@ -3,8 +3,8 @@
  */
 module.exports = function () {
 
-    //var connectionString = 'mongodb://heroku_l9k5l498:kglc93adso36i37j36esrr74t6@ds033126.mlab.com:33126/heroku_l9k5l498';
-    var db = 'mongodb://localhost/wam';
+    var connectionString = 'mongodb://heroku_l9k5l498:kglc93adso36i37j36esrr74t6@ds033126.mlab.com:33126/heroku_l9k5l498';
+    //var db = 'mongodb://localhost/wam';
     if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
         connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
             process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
@@ -16,8 +16,8 @@ module.exports = function () {
     var mongoose = require("mongoose");
     mongoose.Promise = require('bluebird');
 
-    mongoose.connect(db);
-    //mongoose.connect(connectionString);
+    //mongoose.connect(db);
+    mongoose.connect(connectionString);
 
     var models = {
         buyerModel: require("./buyer/buyer.model.server.js")(),
