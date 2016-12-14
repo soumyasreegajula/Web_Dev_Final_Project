@@ -1,0 +1,188 @@
+<head>
+
+
+    <style>
+        table, td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 75%;
+        }
+
+
+        th, td {
+            padding: 15px;
+        }
+
+
+
+    </style>
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="sellercontainer">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Agricom</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/home">About</a>
+                </li>
+
+
+                <li>
+                    <a href="#/loginBuyer">Login</a>
+                </li>
+                <li>
+
+                    <a class="active pull-right"
+                       ng-href="#/loginBuyer" float="right">Logout</a>
+
+
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<br>
+
+<div class="container">
+
+    <div ng-init="model.init()" />
+    <p> "{{varietyDetails.varietyname}}"  is the variety selected. </p>
+      <p> The data gov api requires specific terminology for searching the results. Please enter only the variety name in the seacrh bar excluding the commodity name.</p>
+    <p> For instance, Green Apple is the variety selected. Please enter only "green/Green" in the search bar!!. You can test these search results for GreenApple variety for clarity!</p>
+
+    <input type="text"
+           ng-model="searchinput"
+           class="form-control"
+           placeholder="Get more info from Data Gov"/>
+    <br>
+
+    <a ng-click="model.useApi(searchinput)"
+       class="btn btn-primary btn-block" id="commodities"> <span class="glyphicon glyphicon-search"></span></a>
+
+
+
+    <a ng-href= "#/addtocart/{{varietyDetails.varietyname}}">
+    <img id="imagessize1" src="http://graphiccave.com/wp-content/uploads/2015/04/CTA-Add-to-Cart-Button-PNG-Graphic-Cave.png" align="right"
+    />
+    </a>
+
+
+
+<br>
+
+        <table class="table-responsive table-striped" >
+            <thead class="thead-inverse">
+            <tr>
+                <th>Variety</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img id="imagessize2" src= {{varietyDetails.varietypicture}}/></td>
+                <td> {{varietyDetails.varietyname}}</td>
+                <td>{{varietyDetails.priceperton}}</td>
+                <td> {{varietyDetails.commodityname.commodityname}}</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+</div>
+</br>
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="table-responsive">
+
+              <!--  <tr>
+                    <td class="table-active">...</td>
+                    <td class="table-success">...</td>
+                    <td class="table-warning">...</td>
+                    <td class="table-danger">...</td>
+                    <td class="table-info">...</td>
+                </tr>-->
+
+                <div ng-repeat="detail in details.records track by $index">
+                    <table class="table-responsive table-striped">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th>Product</th>
+                            <th>Product ID by state</th>
+                            <th>Shipment Date</th>
+                            <th>Market price</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td ><img id="imagessize2" src= {{varietyDetails.varietypicture}}/> </td>
+                            <td >{{detail.id}}</td>
+                            <td ><strong> {{detail.arrival_date}}</strong></td>
+                            <td >{{detail.modal_price}}</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+            </div>
+
+
+<nav class="navbar  navbar-fixed-bottom navbar-pages-project">
+    <p class="navbar-text pull-right" style="margin-right: 15px; background-color: snow">
+        Copyrights@2016
+    </p>
+</nav>
+
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+
+
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<div ng-if="model.error" class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Error!</strong> {{model.error}}
+</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container-fluid row">
+
+            <div class="navbar-header align">
+                <p class="navbar-text pull-left" style="margin-left: 5px">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/" class="glyphicon glyphicon-chevron-left  inherit" style="text-decoration: none;"></a>
+                </p>
+                <a class="navbar-brand inherit">
+                    Edit Widget
+                </a>
+
+                <p class="navbar-text pull-right" style="margin-right: 10px">
+                    <a  ng-click="model.updateWidget(model.widget)" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="glyphicon glyphicon-ok inherit" style="text-decoration: none;"></a>
+                </p>
+            </div>
+    </div>
+
+</nav>
+
+
+<div class="row container-fluid">
+
+
+        <form>
+            <ul class="list-group">
+
+                <div ng-switch="model.widget.type">
+
+                    <div ng-switch-when="HEADER">
+                        <ng-include src="'views/widget/widget-header.view.client.html'"/>
+                    </div>
+                    <div ng-switch-when="IMAGE">
+                        <ng-include src="'views/widget/widget-image.view.client.html'"/>
+                    </div>
+                    <div ng-switch-when="YOUTUBE">
+                        <ng-include src="'views/widget/widget-youtube.view.client.html'"/>
+                    </div>
+                    <div ng-switch-when="HTML">
+                        <ng-include src="'views/widget/widget-html.view.client.html'"/>
+                    </div>
+
+
+                    <div ng-switch-when="TEXT">
+                        <ng-include src="'views/widget/widget-input-edit.view.client.html'"/>
+                    </div>
+
+                </div>
+
+            </ul>
+        </form>
+    </div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom navbar-pages">
+    <p class="navbar-text pull-right" style="margin-right: 15px">
+        <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-user page-list_label_style   glyphicon-pages-user" style="text-decoration: none;"></a>
+    </p>
+    <p class="navbar-text pull-left" style="margin-left: 5px">
+        <a href="/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page}}/widget" class="glyphicon glyphicon-play page-list_label_style glyphicon-pages" style="text-decoration: none;"></a>
+    </p>
+</nav>

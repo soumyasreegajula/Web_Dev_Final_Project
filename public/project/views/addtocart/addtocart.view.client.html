@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/custom.css"/>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="sellercontainer ">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">B2B-Ecommerce</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+
+                <li>
+                    <a href="#/loginBuyer">Login</a>
+                </li>
+                <li>
+
+                    <a class="active pull-right"
+                       ng-href="#/loginBuyer" float="right">Logout</a>
+
+
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+<br>
+
+<div class="container-fluid breadcrumbBox text-center">
+
+        <button type="button" class="btn btn-large btn-success" ng-click="model.addtocart(quantity)"><span ></span> Checkout</button>
+
+</div>
+<br>
+<!--
+<div class="btn-group pull-right" role="group" aria-label="..." style="margin-top:10px;">
+    <button type="button" class="btn btn-default btn-info"><span class="fa fa-arrow-left" href="#/home"></span>&nbsp;Back to Products</button>
+    <button type="button" class="btn btn-default btn-success" ng-click="model.addtocart(quantity)"><span class="fa fa-shopping-cart"></span>&nbsp;Checkout</button>
+-->
+</div>
+
+<div class="container text-center">
+
+    <div ng-init="model.init()" />
+
+    <div class="container">
+
+
+        <input type="text"
+               ng-model="quantity"
+               class="form-control"
+               placeholder="Please enter purchase quantity in metric tons" style="margin-left: auto": 30px; align="center"/>
+        <div class="container text-center">
+
+            <div class="creatediv1 marginTop30">
+
+                <div class="row margin-top-50">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary filterable">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">List of Sellers<span style="color: white; font-weight: bold;"> </span></h3>
+
+                            </div>
+
+
+
+                            <div ng-repeat="seller in varietyDetails track by $index">
+                                <table class="table  table-striped table-bordered table-hover table-responsive">
+
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <input
+
+                                                    ng-model="newObject[$index]"
+                                                    type="checkbox"
+                                                    ng-disabled="disable[$index]">
+                                        </td>
+                                        <td>
+                                            <span class="name"> {{seller.username}}</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div  ng-repeat="seller in varietyDetails track by $index" class="table-responsive">
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+    </div>
+
+    </div>
+</div>
+            </div>
+</div>
+
+    <nav class="navbar  navbar-fixed-bottom navbar-pages-project">
+        <p class="navbar-text pull-right" style="margin-right: 15px; background-color: snow">
+            Copyrights@2016
+        </p>
+    </nav>
+<!-- JavaScript includes -->
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/customjs.js"></script>
+</div>
+</body>
+</html>

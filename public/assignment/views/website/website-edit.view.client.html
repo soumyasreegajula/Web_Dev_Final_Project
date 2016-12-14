@@ -1,0 +1,73 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid row">
+        <div class="col-xs-4 hidden-xs">
+            <div class="navbar-header align">
+                <p class="navbar-text pull-left" style="margin-left: 5px">
+                    <a href="#/user/{{model.userId}}/website" class="glyphicon glyphicon-chevron-left  inherit" style="text-decoration: none;"></a>
+                </p>
+                <a class="navbar-brand inherit">
+                    Websites
+                </a>
+
+                <p class="navbar-text pull-right" style="margin-right: 10px">
+                    <a href="#/user/{{model.userId}}/website/new" class="glyphicon glyphicon-plus inherit" style="text-decoration: none;"></a>
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <div class="navbar-header align">
+                <p class="navbar-text pull-left hidden-sm hidden-lg" style="margin-left: 5px">
+                    <a href="#/user/{{model.userId}}/website" class="glyphicon glyphicon-chevron-left  inherit" style="text-decoration: none;"></a>
+                </p>
+                <a class="navbar-brand inherit">Edit Website</a>
+                <p class="navbar-text pull-right" style="margin-right: 10px">
+                    <a ng-click="model.updateWebsite(model.website)"  class="glyphicon glyphicon-ok inherit" style="text-decoration: none;"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="row container-fluid">
+    <div class="col-xs-4 hidden-xs">
+        <form>
+            <ul class="list-group">
+            <div ng-repeat="website in model.websites" class="form-group">
+                <a ng-model="model.website.name" href="#/user/{{model.userId}}/website/{{website._id}}/page" class="page-list_label_style">{{website.name}}</a>
+                <p class="pull-right">
+                    <a href="#/user/{{model.userId}}/website/{{website._id}}" class="glyphicon glyphicon-cog " style="text-decoration: none;"></a>
+                </p>
+
+            </div>
+
+            </ul>
+        </form>
+    </div>
+    <div class="v-divider hidden-sm hidden-xs"></div>
+    <div class=" col-xs-10 col-sm-8 ">
+        <div ng-if="model.error" class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error!</strong> {{model.error}}
+        </div>
+        <form>
+
+            <div class="form-group ">
+
+                <label for="name">Website Name</label>
+                <input ng-model="model.website.name" type="text" class="form-control" id="name"  >
+            </div>
+            <div class="form-group">
+
+                <label for="description">Website Description</label>
+                <textarea ng-model="model.website.description" name="Description" id="description" class="form-control" rows="3" > </textarea></div>
+            <a ng-click="model.deleteWebsite(website)" href="#/user/{{model.userId}}/website" class="btn btn-danger btn-block">Delete</a>
+        </form>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <p class="navbar-text pull-right" style="margin-right: 15px">
+        <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-user page-list_label_style inherit" style="text-decoration: none;"></a>
+    </p>
+</nav>
+

@@ -1,0 +1,43 @@
+
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-pages">
+        <div>
+            <div class="navbar-header align">
+                <p class="navbar-text pull-left" style="margin-left: 5px">
+                    <a href="#/user/{{model.userId}}/website" class="glyphicon glyphicon-chevron-left  glyphicon-pages" style="text-decoration: none;"></a>
+                </p>
+                <a class="navbar-brand " style="color: dimgray" style="text-decoration: none;">New Page</a>
+
+                <p class="navbar-text pull-right" style="margin-right: 15px">
+                    <a ng-click="model.createPage(model.page.name,model.page.title)"  class="glyphicon glyphicon-ok  glyphicon-pages" style="text-decoration: none;"></a>
+                </p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div ng-if="model.error" class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error!</strong> {{model.error}}
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input ng-model="model.page.name" type="text" class="form-control" id="name" placeholder="Page Name">
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input ng-model="model.page.title" type="title" class="form-control" id="title" placeholder="Page Title">
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom navbar-pages">
+        <p class="navbar-text pull-right" style="margin-right: 15px">
+            <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-user page-list_label_style   glyphicon-pages-user" style="text-decoration: none;"></a>
+        </p>
+    </nav>
