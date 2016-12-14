@@ -1,0 +1,35 @@
+
+<div class="container">
+
+    <div ng-show="model.error" class="alert alert-danger" role="alert">
+        {{model.error}}
+    </div>
+
+
+
+    <h1>Create Variety</h1>
+    <input type="text"
+           ng-model="varietyname"
+           class="form-control"
+           placeholder="variety name"/>
+    <input type="text"
+           ng-model="varietypicture"
+           class="form-control"
+           placeholder="variety picture"/>
+    <input type="text"
+           ng-model="priceperton"
+           class="form-control"
+           placeholder="Price per ton"/>
+    <input type="text"
+           ng-model="commodityname"
+           class="form-control"
+           placeholder="which commodity"/>
+
+
+    <h1>
+    </h1>
+
+    <a ng-click="model.registerVariety(varietyname, varietypicture, priceperton, commodityname)"
+       class="btn btn-primary btn-block">Create</a>
+
+</div>

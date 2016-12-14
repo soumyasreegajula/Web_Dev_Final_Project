@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div ng-show="model.error" class="alert alert-danger" role="alert">
+        {{model.error}}
+    </div>
+
+
+
+    <h1>Create Commodity</h1>
+    <input type="text"
+           ng-model="commodityname"
+           class="form-control"
+           placeholder="commodity name"/>
+    <input type="text"
+           ng-model="commoditypicture"
+           class="form-control"
+           placeholder="commodity picture"/>
+
+    <h1>
+    </h1>
+
+    <a ng-click="model.registerComm(commodityname, commoditypicture)"
+       class="btn btn-primary btn-block">Create</a>
+
+</div>

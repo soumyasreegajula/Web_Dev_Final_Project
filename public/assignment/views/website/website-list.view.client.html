@@ -1,0 +1,40 @@
+
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div >
+                <div class="navbar-header align">
+                    <p class="navbar-text pull-left" style="margin-left: 5px">
+                        <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-chevron-left inherit" style="text-decoration: none;"></a>
+                    </p>
+                    <a class="navbar-brand inherit">Websites</a>
+
+                    <p class="navbar-text pull-right" style="margin-right: 10px">
+                        <a href="#/user/{{model.userId}}/website/new" class="glyphicon glyphicon-plus inherit" style="text-decoration: none;"></a>
+                    </p>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <form>
+                <ul class="list-group">
+                <div   ng-repeat="website in model.websites" class="form-group">
+
+                    <a ng-model=model.website.name href="#/user/{{model.userId}}/website/{{website._id}}/page" class="page-list_label_style" style="text-decoration: none;">{{website.name}}</a>
+                    <p class="pull-right">
+                        <a ng-model=model.website.name href="#/user/{{model.userId}}/website/{{website._id}}" class="glyphicon glyphicon-cog " style="text-decoration: none;" ></a>
+                    </p>
+
+                </div>
+
+
+                </ul>
+            </form>
+        </div>
+
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <p class="navbar-text pull-right" style="margin-right: 10px">
+                <a href="#/user/{{model.userId}}" class="glyphicon glyphicon-user page-list_label_style inherit" style="text-decoration: none;"></a>
+            </p>
+        </nav>
